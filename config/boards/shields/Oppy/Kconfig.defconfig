@@ -1,6 +1,6 @@
-if SHIELD_DEKK
+if SHIELD_OPPY
 
 config  ZMK_KEYBOARD_NAME
-    default "dekk"
+    default "Oppy"
 
 endif
