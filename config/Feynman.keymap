@@ -1,22 +1,32 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 #define DEFAULT 0
 
 / {
+    macros {
+        Double00: Double00 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N0 &kp N0>;
+            label = "DOUBLE00";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-            &kp ESC    &kp F13          &kp F14   &kp F15   &kp F17
-            &kp F18    &kp KP_NUMLOCK   &kp SLASH &kp STAR  &kp MINUS
-            &kp F19    &kp N7           &kp N8    &kp N9    &kp PLUS
-            &kp F20    &kp N4           &kp N5    &kp N6  
-            &kp F21    &kp N1           &kp N2    &kp N3    &kp EQUAL
-            &kp F22    &kp N0          &kp N0     &kp DOT  
+&kp ESC  &kp F13         &kp F14    &kp F15     &kp F17
+&kp F18  &kp KP_NUMLOCK  &kp SLASH  &kp STAR    &kp MINUS
+&kp F19  &kp N7          &kp N8     &kp N9      &kp PLUS
+&kp F20  &kp N4          &kp N5     &kp N6
+&kp F21  &kp N1          &kp N2     &kp N3      &kp KP_EQUAL
+&kp F22  &kp N0          &Double00  &kp KP_DOT
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
     };
 };
