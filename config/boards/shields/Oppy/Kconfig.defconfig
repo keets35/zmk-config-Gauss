@@ -1,6 +1,0 @@
-if SHIELD_OPPY
-
-config  ZMK_KEYBOARD_NAME
-    default "Oppy"
-
-endif
