@@ -56,7 +56,7 @@
 
         arrows {
             bindings = <
-&trans  &trans    &trans        &trans     &trans
+&to 0   &trans    &trans        &trans     &trans
 &trans  &trans    &trans        &trans     &trans
 &trans  &trans    &kp UP_ARROW  &trans     &trans
 &trans  &kp LEFT  &trans        &kp RIGHT
@@ -69,7 +69,7 @@
 
         layer_2 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans
+&to 0   &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans
