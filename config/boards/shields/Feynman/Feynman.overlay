@@ -48,10 +48,6 @@
         a-gpios = <&gpio1 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <15>;
-        status = "disabled";
-    };
-
-    &left_encoder {
         status = "okay";
     };
 
