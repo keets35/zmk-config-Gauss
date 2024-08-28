@@ -6,27 +6,7 @@
 #define DEFAULT 0
 
 / {
-    macros {
-        Double00: Double00 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp N0 &kp N0>;
-            label = "DOUBLE00";
-        };
-    };
-
-    behaviors {
-        Layer0: Layer0 {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "LAYER0";
-            #sensor-binding-cells = <0>;
-            bindings = <&to 1>, <&to 2>;
-
-            tap-ms = <40>;
-        };
-    };
-
-    keymap {
+        keymap {
         compatible = "zmk,keymap";
 
         default_layer {
@@ -39,7 +19,7 @@
 &kp F22  &kp N0          &kp N0     &kp PERIOD
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&inc_dec_kp K_VOLUME_UP C_VOLUME_DOWN>;
         };
     };
 };
