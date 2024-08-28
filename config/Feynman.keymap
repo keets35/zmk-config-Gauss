@@ -1,44 +1,12 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+&left_encoder { status = "okay"; };
+
 #define DEFAULT 0
 
 / {
-    macros {
-        Double00: Double00 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp N0 &kp N0>;
-            label = "DOUBLE00";
-        };
-    };
-
-    behaviors {
-        Layer0: Layer0 {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "LAYER0";
-            #sensor-binding-cells = <0>;
-            bindings = <&to 1>, <&to 2>;
-
-            tap-ms = <40>;
-        };
-
-        layer1: layer1 {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "LAYER1";
-            #sensor-binding-cells = <0>;
-            bindings = <&to 2>, <&to 0>;
-        };
-
-        layer2: layer2 {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "LAYER2";
-            #sensor-binding-cells = <0>;
-            bindings = <&to 0>, <&to 1>;
-        };
-    };
-
-    keymap {
+        keymap {
         compatible = "zmk,keymap";
 
         default_layer {
@@ -48,36 +16,10 @@
 &kp F19  &kp N7          &kp N8     &kp N9      &kp PLUS
 &kp F20  &kp N4          &kp N5     &kp N6
 &kp F21  &kp N1          &kp N2     &kp N3      &kp EQUAL
-&kp F22  &kp N0          &Double00  &kp PERIOD
+&kp F22  &kp N0          &kp N0     &kp PERIOD
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-        };
-
-        arrows {
-            bindings = <
-&to 0   &trans    &trans        &trans     &trans
-&trans  &trans    &trans        &trans     &trans
-&trans  &trans    &kp UP_ARROW  &trans     &trans
-&trans  &kp LEFT  &trans        &kp RIGHT
-&trans  &trans    &kp DOWN      &trans     &trans
-&trans  &trans    &trans        &trans
-            >;
-
-            sensor-bindings = <&layer1>;
-        };
-
-        layer_2 {
-            bindings = <
-&to 0   &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans
-            >;
-
-            sensor-bindings = <&layer2>;
         };
     };
 };
