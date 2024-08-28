@@ -47,12 +47,12 @@
         label = "LEFT_ENCODER";
         a-gpios = <&gpio1 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        resolution = <12>;
+        steps = <15>;
+        status = "disabled";
     };
 
-    sensors: sensors {
-            compatible = "zmk,keymap-sensors";
-            sensors = <&left_encoder>;
-            triggers-per-rotation = <20>;
-        };
+    &left_encoder {
+        status = "okay";
+    };
+
 };
