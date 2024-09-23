@@ -30,8 +30,8 @@
             bindings = <
 &kp ESC          &kp KP_NUMLOCK  &kp SLASH  &kp STAR    &kp MINUS
 &to 1            &kp KP_N7       &kp KP_N8  &kp KP_N9   &kp PLUS
-&kp LA(LC(F20))  &kp KP_N4       &kp KP_N5  &kp KP_N6   &kp LA(LC(F21))
-&kp KP_N1        &kp KP_N2       &kp KP_N3  &kp ENTER
+&kp LA(LC(F20))  &kp KP_N4       &kp KP_N5  &kp KP_N6   
+&kp LA(LC(F21))  &kp KP_N1       &kp KP_N2  &kp KP_N3   &kp ENTER
 &kp LA(LC(F22))  &kp KP_N0       &double0   &kp PERIOD
             >;
 
@@ -40,12 +40,12 @@
 
         BT {
             bindings = <
-&trans          &to 0         &trans        &trans        &trans
-&trans          &trans        &kp UP        &trans        &trans
-&trans          &kp LEFT      &trans        &kp RIGHT     &trans
-&trans          &trans        &kp DOWN      &trans
-&bt BT_CLR_ALL  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans
-&trans          &trans        &trans        &trans
+
+&kp ESC          &to 0          &trans          &trans      &trans
+&to 0            &trans         &kp UP          &trans      &trans
+&kp LA(LC(F23))  kp LEFT        &trans          &kp RIGHT   
+&kp LA(LC(F24))  &trans         &kp DOWN        &trans      &trans
+&kp LA(LC(F25))  &bt BT_CLR_ALL &bt BT_SEL 1    &bt BT_SEL 2
             >;
         };
     };
