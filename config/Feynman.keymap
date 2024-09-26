@@ -40,6 +40,11 @@
             bindings = <&bt BT_SEL 1>;
             key-positions = <1 21>;
         };
+
+        Lock {
+            bindings = <&kp LG(L)>;
+            key-positions = <1 5>;
+        };
     };
 
     keymap {
