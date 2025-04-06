@@ -20,10 +20,10 @@
         diode-direction = "col2row";
         
         col-gpios
-            = <&gpio 1 GPIO_ACTIVE_HIGH>   
-            , <&gpio 0 GPIO_ACTIVE_HIGH>   
-            , <&gpio 6 GPIO_ACTIVE_HIGH>   
-            , <&gpio 7 GPIO_ACTIVE_HIGH>   
+            = <&gpio0 1 GPIO_ACTIVE_HIGH>   
+            , <&gpio0 0 GPIO_ACTIVE_HIGH>   
+            , <&gpio0 6 GPIO_ACTIVE_HIGH>   
+            , <&gpio0 7 GPIO_ACTIVE_HIGH>   
             ;
 
         row-gpios
@@ -34,8 +34,8 @@
     left_encoder: encoder_left {
         compatible = "alps,ec11";
         label = "LEFT_ENCODER";
-        a-gpios = <&gpio 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         resolution = <100>;
     };
 
