@@ -1,0 +1,6 @@
+if SHIELD_GAUSS
+
+config  ZMK_KEYBOARD_NAME
+    default "Gauss"
+
+endif

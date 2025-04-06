@@ -1,5 +1,5 @@
-config SHIELD_FEYNMAN
-    def_bool $(shields_list_contains,Feynman)
+config SHIELD_GAUSS
+    def_bool $(shields_list_contains,GAUSS)
 
 config SYSTEM_WORKQUEUE_STACK_SIZE
 	int "work queue stack size"

@@ -1,0 +1,46 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,matrix-transform = &default_transform;
+    };
+        default_transform: keymap_transform_0 {
+            compatible = "zmk,matrix-transform";
+            columns = <4>;
+            rows = <1>;
+            map = <
+            RC(0,0) RC(0,1) RC(0,2) RC(0,3)
+            >;
+        };
+
+    kscan0: kscan_0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
+        diode-direction = "col2row";
+        
+        col-gpios
+            = <&gpio 1 GPIO_ACTIVE_HIGH>   
+            , <&gpio 0 GPIO_ACTIVE_HIGH>   
+            , <&gpio 6 GPIO_ACTIVE_HIGH>   
+            , <&gpio 7 GPIO_ACTIVE_HIGH>   
+            ;
+
+        row-gpios
+            = <&gpio0  2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  
+            ; 
+    };
+
+    left_encoder: encoder_left {
+        compatible = "alps,ec11";
+        label = "LEFT_ENCODER";
+        a-gpios = <&gpio 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        resolution = <100>;
+    };
+
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder>;
+    };
+};
