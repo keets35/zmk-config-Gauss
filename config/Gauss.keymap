@@ -11,7 +11,7 @@
 
         default_layer {
             bindings = <
-&kp ESC  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_PREV
+&kp C_MUTE  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_PREV
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
